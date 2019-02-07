@@ -106,7 +106,22 @@ type GitHubV3Entity struct {
 	ReceivedEventsURL string `json:"received_events_url"`
 }
 
+type GitHubV3Ref struct {
+	Ref  string `json:"ref"`
+	SHA  string `json:"sha"`
+	Repo struct {
+		ID   int    `json:"id"`
+		URL  string `json:"url"`
+		Name string `json:"name"`
+	}
+}
+
 type GitHubV3PR struct {
+	URL    string      `json:"url"`
+	ID     int         `json:"id"`
+	Number int         `json:"number"`
+	Base   GitHubV3Ref `json:"base"`
+	Head   GitHubV3Ref `json:"head"`
 }
 
 type GitHubV3App struct {
