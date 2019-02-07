@@ -121,7 +121,7 @@ type GitHubV3App struct {
 }
 
 type GitHubV3Commit struct {
-	ID        int             `json:"id"`
+	ID        string          `json:"id"`
 	TreeID    string          `json:"tree_id"`
 	Message   string          `json:"message"`
 	Timestamp GitHubTimestamp `json:"timestamp"`
